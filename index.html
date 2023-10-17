@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <title>kiFrio - Meteorologia</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper blue-grey darken-4">
+                <form action="javascript:requestOpenWeather()">
+                    <div class="input-field">
+                        <input id="locale" type="search" required>
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blue-grey darken-4">
+        <section class="container center-align">
+            <div class="temp-container">
+                <div class="main_temp blue-grey darken-4" id="temperature">
+                    42°
+                </div>
+            </div>
+            <button class="waves-effect waves-light btn-small blue-grey" >Celsius</button>
+
+        </section>
+    </main>
+
+
+
+    <footer class="page-footer blue-grey darken-4">
+        <div class="footer-copyright">
+            <div class="container">
+                <p class="left">© 2023 Vinicius J P Silva</p>
+                <a class="waves-effect waves-light btn-small blue-grey right" href="https://github.com/ViniciusJPSilva"
+                    target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
