@@ -12,11 +12,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
+    <!-- FONTES -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 
     <title>kiFrio - Meteorologia</title>
 </head>
 
-<body>
+<body class="blue-grey darken-1">
     <header>
         <nav>
             <div class="nav-wrapper blue-grey darken-4">
@@ -30,16 +34,80 @@
             </div>
         </nav>
     </header>
-
-    <main class="blue-grey darken-4">
-        <section class="container center-align">
+    <main>
+        <section class="container center-align blue-grey darken-4 main">
             <div class="temp-container">
-                <div class="main_temp blue-grey darken-4" id="temperature">
-                    42°
+                <div class="main_temp blue-grey darken-4 " id="temperature">
+                    25°
                 </div>
             </div>
-            <button class="waves-effect waves-light btn-small blue-grey" >Celsius</button>
+            <div class="col s12 margin top-30">
+                <button id="temp-unit" class="waves-effect waves-light btn-small light-blue accent-3"
+                    onclick="changeTempUnit()">
+                    Celsius
+                </button>
+            </div>
+            <div class="row valign-wrapper">
+                <div class="col s6 container-min">
+                    <h2 class="min blue-text">
+                        <span class="material-symbols-outlined fs-8">
+                            south
+                        </span>
+                        <span id="minimum" class="fs-8">00°</span>
+                    </h2>
+                </div>
+                <div class="col s6">
+                    <h2 class="max red-text container-max">
+                        <span class="material-symbols-outlined fs-8">
+                            north
+                        </span>
+                        <span id="maximum" class="fs-8">50°</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="row margin top-20">
+                <div class="col s12 m12 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text center-align">
+                            <span id="weather-description" class="card-title">Descrição</span>
+                            <img id="weather-img" class="materialboxed margin hcenter" width="100"
+                                src="https://openweathermap.org/img/wn/10d@4x.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l4">
+                    <div class="card blue-grey darken-1 ">
+                        <div class="card-content white-text">
+                            <span class="card-title">Velocidade do Vento</span>
+                            <div class="valign-wrapper wind">
+                                <span id="wind-speed" class="col s6 txt">00 Km/h</span>
+                                <span class="material-symbols-outlined col s6 img">
+                                    air
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m12 l4">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <div class="valign-wrapper sun-set-rise">
+                                <span class="material-symbols-outlined col s6 img">
+                                    clear_day
+                                </span>
+                                <span id="sunrise" class="col s6 txt">00:00</span>
+                            </div>
+                            <div class="valign-wrapper sun-set-rise">
+                                <span class="material-symbols-outlined col s6 img">
+                                    clear_night
+                                </span>
+                                <span id="sunset" class="col s6 txt">00:00</span>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
