@@ -7,6 +7,7 @@
     --txt-font: 'Quicksand', sans-serif;
     --animation-color: #00e5ff;
     --animation-time: 4s;
+    --std-bg: #263238;
 }
 
 * {
@@ -29,6 +30,11 @@ main {
 
 footer {
     margin-top: 30px;
+}
+
+.main-bg {
+    background: var(--std-bg);
+    background: linear-gradient(180deg, var(--std-bg) 20%, var(--animation-color) 150%);  
 }
 
 .main{
@@ -68,21 +74,34 @@ footer {
     animation-delay: calc((var(--animation-time) / 2) * -1);
 }
 
-.main_temp {
+.main-temp {
     color: var(--white);
-    font-size: 5em;
+    font-size: 7em;
     position: absolute;
     inset: 5px;
     border-radius: 50%;
     z-index: 1;
 }
 
+.btn {
+    background-color: var(--animation-color) !important;
+}
+
 .card {
     min-height: 200px;
+    border-radius: 50px !important;
+}
+
+.page-footer, .footer-copyright {
+    background: none !important;
 }
 
 .fs-8 {
     font-size: 1em !important;
+}
+
+.bold-font {
+    font-weight: bold !important;
 }
 
 .wind {
@@ -138,19 +157,19 @@ footer {
 }
 
 @media only screen and (max-width: 425px) {
-    .main_temp {
-        font-size: 3em;
+    .main-temp {
+        font-size: 4em;
     }
 
     .min>.fs-8,
     .max>.fs-8 {
-        font-size: 0.6em !important;
+        font-size: 0.59em !important;
     }
 }
 
 @media only screen and (min-width: 425px) {
-    .main_temp {
-        font-size: 3.5em;
+    .main-temp {
+        font-size: 5em;
     }
 
     .min>.fs-8,
@@ -160,14 +179,29 @@ footer {
 }
 
 @media only screen and (min-width: 600px) {
-    .main_temp {
-        font-size: 4em;
+    .main-temp {
+        font-size: 5em;
     }
     
 }
 
+@media only screen and (max-width: 600px) {
+
+    .main-temp {
+        font-size: 5em;
+    }
+
+    .temp-container {
+        width: 50vmin;
+        height: 50vmin;
+        line-height: 47.5vmin;
+    }
+    
+}
+
+
 @media only screen and (min-width: 768px) {
-    .main_temp {
+    .main-temp {
         font-size: 6em;
     }
 
@@ -179,19 +213,19 @@ footer {
 }
 
 @media only screen and (min-width: 992px) {
-    .main_temp {
-        font-size: 6em;
+    .main-temp {
+        font-size: 10em;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    .main_temp {
-        font-size: 7em;
+    .main-temp {
+        font-size: 9em;
     }
 }
 
 @media only screen and (min-width: 1600px) {
-    .main_temp {
-        font-size: 8em;
+    .main-temp {
+        font-size: 9em;
     }
 }

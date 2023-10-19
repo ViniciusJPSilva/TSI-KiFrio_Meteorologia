@@ -20,36 +20,48 @@
     <title>kiFrio - Meteorologia</title>
 </head>
 
-<body class="blue-grey darken-1">
+<body class="main-bg">
     <header>
         <nav>
             <div class="nav-wrapper blue-grey darken-4">
                 <form action="javascript:requestOpenWeather()">
                     <div class="input-field">
                         <input id="locale" type="search" required>
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <label class="label-icon" for="locale"><i class="material-icons">search</i></label>
                         <i class="material-icons">close</i>
                     </div>
                 </form>
             </div>
         </nav>
     </header>
+
     <main>
-        <section class="container center-align blue-grey darken-4 main">
+        <!-- Modal -->
+        <div id="error-modal" class="modal">
+            <div class="modal-content blue-grey darken-4 white-text">
+                <h4>Ops... Ocorreu um erro</h4>
+                <p>Verifique se a localização está escrita corretamente!</p>
+            </div>
+            <div class="modal-footer blue-grey darken-4">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">OK</a>
+            </div>
+        </div>
+
+        <section class="container center-align main">
             <div class="temp-container">
-                <div class="main_temp blue-grey darken-4 " id="temperature">
+                <div class="main-temp blue-grey darken-4 " id="temperature">
                     25°
                 </div>
             </div>
             <div class="col s12 margin top-30">
-                <button id="temp-unit" class="waves-effect waves-light btn-small light-blue accent-3"
+                <button id="temp-unit" class="waves-effect waves-light btn-small btn bold-font grey-text text-darken-4"
                     onclick="changeTempUnit()">
                     Celsius
                 </button>
             </div>
-            <div class="row valign-wrapper">
+            <div class="row valign-wrapper ">
                 <div class="col s6 container-min">
-                    <h2 class="min blue-text">
+                    <h2 class="min blue-text" title="Mínima">
                         <span class="material-symbols-outlined fs-8">
                             south
                         </span>
@@ -57,7 +69,7 @@
                     </h2>
                 </div>
                 <div class="col s6">
-                    <h2 class="max red-text container-max">
+                    <h2 class="max red-text container-max" title="Máxima">
                         <span class="material-symbols-outlined fs-8">
                             north
                         </span>
@@ -67,7 +79,7 @@
             </div>
             <div class="row margin top-20">
                 <div class="col s12 m12 l4">
-                    <div class="card blue-grey darken-1">
+                    <div class="card blue-grey darken-4">
                         <div class="card-content white-text center-align">
                             <span id="weather-description" class="card-title">Descrição</span>
                             <img id="weather-img" class="materialboxed margin hcenter" width="100"
@@ -76,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col s12 m12 l4">
-                    <div class="card blue-grey darken-1 ">
+                    <div class="card blue-grey darken-4">
                         <div class="card-content white-text">
                             <span class="card-title">Velocidade do Vento</span>
                             <div class="valign-wrapper wind">
@@ -89,7 +101,7 @@
                     </div>
                 </div>
                 <div class="col s12 m12 l4">
-                    <div class="card blue-grey darken-1">
+                    <div class="card blue-grey darken-4">
                         <div class="card-content white-text">
                             <div class="valign-wrapper sun-set-rise">
                                 <span class="material-symbols-outlined col s6 img">
@@ -113,12 +125,12 @@
 
 
 
-    <footer class="page-footer blue-grey darken-4">
+    <footer class="page-footer">
         <div class="footer-copyright">
-            <div class="container">
-                <p class="left">© 2023 Vinicius J P Silva</p>
-                <a class="waves-effect waves-light btn-small blue-grey right" href="https://github.com/ViniciusJPSilva"
-                    target="_blank">GitHub</a>
+            <div class="container ">
+                <p class="left grey-text text-darken-4 bold-font">© 2023 Vinicius J P Silva</p>
+                <a class="waves-effect waves-light btn-small btn bold-font grey-text text-darken-4 right"
+                    href="https://github.com/ViniciusJPSilva" target="_blank">GitHub</a>
             </div>
         </div>
     </footer>
