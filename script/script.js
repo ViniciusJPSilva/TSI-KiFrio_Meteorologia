@@ -5,7 +5,9 @@ var OPEN_WEATHER_MAP_KEY = '0765d2ad7b1d8c3dfe0686d3b69f240b';
 const CELSIUS = "Celsius",
   KELVIN = "Kelvin",
   KI_FRIO = "KiFrio",
-  KI_CALOR = "KiCalor";
+  KI_CALOR = "KiCalor",
+  ERROR_MODAL = "#error-modal",
+  MSG_MODAL = "#msg-modal";
 
 var unit = CELSIUS;
 var last_response;
@@ -25,13 +27,13 @@ function sendRequest(url, callback) {
       callback(resp_obj);
     } else {
       document.querySelector("#locale").value = last_response.name;
-      openErrorModal();
+      openModal(ERROR_MODAL);
     }
   }
 
   req.onerror = function () {
     document.querySelector("#locale").value = last_response.name;
-    openErrorModal();
+    openModal(ERROR_MODAL);
   }
 
   req.open("GET", url);
@@ -232,13 +234,14 @@ function mapColor(value) {
  */
 document.addEventListener('DOMContentLoaded', function () {
   M.AutoInit();
+  openModal(MSG_MODAL);
 });
 
 /**
  * Função para abrir um modal de erro.
  */
-function openErrorModal() {
-  var modal = document.getElementById('error-modal');
+function openModal(id) {
+  var modal = document.querySelector(id);
   var instance = M.Modal.init(modal, {});
   instance.open(); 
 }
